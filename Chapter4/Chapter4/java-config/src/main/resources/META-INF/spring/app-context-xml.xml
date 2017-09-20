@@ -7,11 +7,12 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="messageRenderer" 
+    <bean id="messageProvider"
+          class="com.apress.prospring4.ch4.ConfigurableMessageProvider"
+          c:message="This is a configurable message"/>
+
+    <bean id="messageRenderer"
         class="com.apress.prospring4.ch4.StandardOutMessageRenderer"
         p:messageProvider-ref="messageProvider"/>
 
-    <bean id="messageProvider" 
-        class="com.apress.prospring4.ch4.ConfigurableMessageProvider"
-        c:message="This is a configurable message"/>
 </beans>
